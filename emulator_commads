@@ -1,0 +1,19 @@
+# for checking the avaiable emulators : 
+./emulator -list-avds
+
+# for selecting the specific emulator with writable permission
+./emulator @Pixel_5_API_30 -writable-system
+
+
+# for having a rootable device use the images without GOOGLE PLAY
+
+$ ./emulator -avd Pixel_2_API_27_2 -writable-system -selinux disabled -qemu -enable-kvm
+$ adb root && adb remount
+$ adb install SuperSU/common/Superuser.apk
+$ adb push SuperSU/x86/su /system/xbin/su
+$ adb shell  chmod 0755 /system/xbin/su
+$ adb shell setenforce 0
+$ adb shell su --install
+$ adb shell su --daemon&
+//open the SuperSU app on the device, and it will tell you the su binary needs to be updated. Accept and use normal installation
+

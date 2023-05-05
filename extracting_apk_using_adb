@@ -1,0 +1,11 @@
+adb shell pm list packages | grep Kash
+
+adb shell pm path com.bKash.customerapp
+
+adb pull /data/app/com.bKash.customerapp-7i9wCiNM4-D2pVYsvsOmJQ==/base.apk
+
+
+//uninstall:
+adb uninstall com.bKash.customerapp
+
+

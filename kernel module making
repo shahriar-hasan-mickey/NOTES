@@ -1,0 +1,59 @@
+Makefile:6: *** missing separator.  Stop.
+# the above error is because make works with tab not spaces
+
+
+ERROR: Kernel configuration is invalid.
+         include/generated/autoconf.h or include/config/auto.conf are missing.
+         Run 'make oldconfig && make prepare' on kernel src to fix it.
+# the above error could be fixed by reinstalling the kernel header file :   https://askubuntu.com/questions/890712/kernel-configuration-is-invalid-error-while-trying-to-install-paragon-ufsd-profe
+
+sudo apt install --reinstall linux-headers-$(uname -r)
+
+
+
+
+
+####to be able to run modprobe
+copy the module to /lib/modules/6.0.0-2parrot1-amd64
+$ cp hello.ko /lib/modules/6.0.0-2parrot1-amd64
+$ modprobe hello
+
+** note do not type modprobe hello.ko, rather type without the .ko extension
+
+-----------------------------------------------------------
+####
+RESOURCES:
+https://wiki.archlinux.org/title/Kernel_module
+####
+(in the aboce link also the diff between insmod and modprobe could be found)
+-----------------------------------------------------------
+
+######AUTOMATING THE KERNEL MODULE LOADING AT BOOT
+
+
+**modprobe -version**
+####for automating module loading at boot up make a file named after the module with a .conf extension and content it with the name of the module without the .ko extension:
+
+sudo vim /etc/modules-load.c/hello_world_kernel.conf
+-> hello_world_kernel
+
+#the above could be done as follows as well:
+sudo vim /etc/modules-load.c/hello_world_kernel.conf
+echo "hello_world_kernel" | sudo tee -a /etc/modules-load.c/hello_world_kernel.conf
+
+### RESOURCES: https://askubuntu.com/questions/299676/how-to-install-3rd-party-module-so-that-it-is-loaded-on-boot
+
+
+--------------------------------------------------------------
+
+**insmod -version**
+####
+####the code below is for insmod
+sudo cp hello.ko /lib/modules/$(uname -r)/kernel/drivers/
+echo 'hello.ko' | sudo tee -a /etc/modules
+
+# tee takes std input and pass it to std ouput or mentioned destination as above
+
+sudo depmod
+
+### RESOURCES: https://stackoverflow.com/questions/4356224/how-to-load-a-custom-module-at-the-boot-time-in-ubuntu

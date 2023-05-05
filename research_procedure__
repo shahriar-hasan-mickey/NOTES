@@ -1,0 +1,102 @@
+# d2j-dex2jar : https://sourceforge.net/projects/dex2jar/files/
+
+
+# was unable to run the d2j-dex2jar tool specifically:
+https://www.thegeekdiary.com/error-while-loading-shared-libraries-libjli-so-cannot-open-shared-object-file-no-such-file-or-directory-java-version-error-on-startup/              
+
+# my java path was not defined in the PATH variable so the java command wasn't able to initiate since it shows the following error:
+java: error while loading shared libraries: libjli.so: cannot open shared object file: No such file or directory
+
+
+
+https://www.thegeekdiary.com/java-command-does-not-run-the-jvm-that-has-been-installed/
+
+-> export PATH=/usr/java/jdk1.7/bin:$PATH
+(in my case)-> export PATH=/usr/java/jdk1.8.0_361/bin:$PATH
+
+##########
+FOR RUNNING BURP SUIT USE THE FOLLOWING PATH TO JDK-17:
+export PATH=/usr/lib/jvm/jdk-17/bin:$PATH
+##########
+
+
+# after fixing the PATH issue I ran the command on the bkash app to get the equivalent .jar file 
+$ d2j-dex2jar bKash.apk
+
+# then downloading jdgui using the github guide in : git clone https://github.com/java-decompiler/jd-gui.git
+
+
+# then saving the java source code in zip formate to a directory in my case to bKash_src_java
+
+# so i tried to open the bKash folder after unzipping it as project in android studio but it didn't have the java soruce part
+
+# then I thought that the bKash_src_java in this case is the source so I moved it inside the bKash folder and named it java from bKash_src_java
+
+# don't know why there are 2 .dex file inside the bKash apk
+but I tried to convert one of them to .jar and then opened it in jdgui and saved the source as java inside the bKash directory and renamed the previously decompiled java from the .apk as java2
+
+
+
+# then things starts to fit as like the actual android project
+
+# though One thing of question is kotlin folder was there from before so I have a doubt whether the whole project is done over kotlin or not since opening up a Kotlin file did not require and decompilation but just unzipping the bKash.apk was enough
+
+# Moreover opening up a kotlin file shows the inner portion of some functions as /*compiled code*/
+meaning while unzipping it auto decompiled!?
+
+
+#for qemu
+pip install Ninja
+pip install glib
+apt-get install libglib2.0-dev
+pip install meson
+./configure
+?? the above didn't work for qemu
+
+$ sudo apt install qemu qemu-kvm virt-manager bridge-utils
+
+
+
+# Download the sdk and extrac if zipped
+
+
+# for setting up JAVA_HOME path : 
+export JAVA_HOME=$"/usr/java/jdk1.8.0_361"
+
+# for setting ANDROID_HOME (note: after going to the sdk directory the following code is being run):
+export ANDROID_HOME=$(echo $(pwd))
+
+
+
+
+copied bKash.apk to "app/build/outputs/apk/debug/bKash.apk"
+
+gave the path of apk_directory instead of aar_directory as the os.listdir()'s parameter
+
+and also set the apk_directory to "app/build/outputs/apk/debug/"
+and removed any other apk files from there except bKash's apk
+
+Tried to run from the Phase 4
+
+But didn't work
+
+Rather showed the following : 
+INFO | 2023-03-10 17:20:26.853 | Interface.SubRunner (SubRunner.java:59) | Stopped the scanning process
+ INFO | 2023-03-10 17:20:26.886 | block.Default (Default.java:68) | Marshalling the Report from the Env. Info.
+ INFO | 2023-03-10 17:20:27.048 | Interface.SubRunner (SubRunner.java:62) | Writing the output to the file: /home/slave/research/aardroid/aardroid/SNAPSHOT-1.0/_CryptoGuard-04.05.03_2020-11-25-02-42_bkash-5-3-0_0c6e9ece-aa79-4fcb-8ceb-a54c7e916304_.json
+/home/slave/research/aardroid/aardroid/SNAPSHOT-1.0/_CryptoGuard-04.05.03_2020-11-25-02-42_bkash-5-3-0_0c6e9ece-aa79-4fcb-8ceb-a54c7e916304_.json
+mv: cannot move '_CryptoGuard-04.05.03_2020-11-25-02-42_bkash-5-3-0_0c6e9ece-aa79-4fcb-8ceb-a54c7e916304_.json' to 'output/bkash-5-3-0/cryptoguard_bkash-5-3-0.json': No such file or directory
+Error generating bkash-5-3-0.apk
+
+
+
+
+
+
+#AMANDROID:
+❎️ -> upay
+➕️ -> astha
+➕️ -> islamicWallet1
+➕️ -> islamicWallet2
+☑️ -> ibbl
+

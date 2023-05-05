@@ -1,0 +1,21 @@
+Whenever I try to install some .deb packages which I downloaded before (e.g. Atom, BP-tools etc.) I receive this error in Ubuntu 17.10:
+
+./bp-tools_17.12_amd64_Xenial_free.deb 
+./bp-tools_17.12_amd64_Xenial_free.deb: line 1: syntax error near
+unexpected token `newline' ./bp-tools_17.12_amd64_Xenial_free.deb:
+line 1: `!<arch>'
+
+can anyone help, please? 
+
+
+
+
+Try installing the software with
+
+dpkg --install <Package_Name>
+
+Like in your case just cd into the directory and then type the above command like
+
+dpkg --install libpng12-0_1.2.50-2+deb8u3_amd64.deb
+
+// the above doesn't work for parrot os

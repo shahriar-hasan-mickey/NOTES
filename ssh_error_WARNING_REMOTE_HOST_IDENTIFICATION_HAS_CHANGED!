@@ -1,0 +1,5 @@
+#when ever get the following error simpy delete the ssh key using
+
+$ rm .ssh/known_hosts
+
+WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!

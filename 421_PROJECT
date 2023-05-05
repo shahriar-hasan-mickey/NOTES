@@ -1,0 +1,28 @@
+#421 PROJECT
+-> 6 routers
+-> 10.128.0.0/10
+-> 
+    -780
+    -220
+    -155
+    -85
+    -54
+    -40
+-> static IP for : LLB, ARCH
+-> Others through DHCP
+-> DHCP server at ECO DEPT.
+-> WEB server at BSRM
+-> DNS server at ENGLISH & HMN DEPT.
+-> MAIL server for LLB, ENGLISH & HMN DEPT.
+-> ALL SERVERS MUST BE CONFIGURED MANUALLY
+-> Static routing for all networks except CSE DEPT. & ECO DEPT.
+-> Dynamic routing for CSE DEPT. & ECO DEPT.
+-> Floating Static route between ARCH & LLB DEPT.
+-> NO DEFAULT ROUTES
+-> 2 END DEVICES TO BE SHOWN PER NETWORK
+-> PING EACH PLACE FROM ANOTHER
+
+-> DIAGRAM FROM NETWORK TOPOLOGY
+-> (VLSM) variable length subnet mask tree
+-> IP address table
+-> router configuring commands

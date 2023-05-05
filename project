@@ -1,0 +1,13 @@
+https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json?key=XvVoCYLLjo13ypFOkyI6jnqvdXqTN6Nq&point=52.41072,4.84239
+
+https://router.hereapi.com/v8/routes?transportMode=car&origin=23.780974349417,90.39985977299754&destination=23.780843282749526,90.39884344357667&return=summary&apikey=8X6Ln0KTKuHe5ZNxJVvsKL8r0AXfl31Ks-TbEDZQTxg
+
+
+# for error : 
+https://router.hereapi.com/v8/routes?transportMode=car&origin=23.780823646949802,%2090.40233031519047&destination=23.780843282749526,%2090.39884344357667&return=summary&apikey=8X6Ln0KTKuHe5ZNxJVvsKL8r0AXfl31Ks-TbEDZQTxg
+
+
+# HERE organization ID:
+org992817801
+
+https://api.openweathermap.org/data/2.5/weather?q=daka&appid=d072a05cd65678cc4da5f47910c9cb00

@@ -1,0 +1,24 @@
+# pwn.college
+
+# 15
+/usr/bin/base64 /flag | /usr/bin/base64 -d
+
+# 16
+$ /usr/bin/split --verbose /flag  # this creats a file xaa which is the flag since verbose means : output version information and exit
+$ cat xaa
+
+# 17
+$ /usr/bin/gzip -dc flag.gz 
+d : decompress c : stdout
+
+# 18
+$ /usr/bin/bzip2 -dc flag.bz2
+d : decompress c : stdout
+
+# 19
+$ /usr/bin/zip - /flag > /home/hacker/new.txt
+-(dash) : zip accepts single dash as the file name (the file to which it will be zipped to). in which case it will write the zip file to standard output. Hence finally the result is piped into a writeable test file in the write permit zone so that it could be later read from
+
+
+# 20
+

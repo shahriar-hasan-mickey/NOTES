@@ -1,0 +1,6 @@
+#local server for python flask : 
+python3 file.py
+
+
+#for nginx and gunicorn see the below video : 
+https://www.youtube.com/watch?v=KgAtZ1LlNiQ

@@ -1,0 +1,17 @@
+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
+
+
+
+for storing credentials:
+git config --global credential.helper store
+
+
+git remote add PTS_server https://github.com/shahriar-hasan-mickey/PTS_server
+git push PTS_server
+(then provide username and token)
+
+8X6Ln0KTKuHe5ZNxJVvsKL8r0AXfl31Ks-TbEDZQTxg & d072a05cd65678cc4da5f47910c9cb00
+
+
+#for java file not being pushed to github due to subproject .git
+https://stackoverflow.com/questions/32130518/java-files-are-not-being-pushed-to-github
